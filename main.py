@@ -1,3 +1,4 @@
+# importing neccessary modules
 import os
 
 from selenium import webdriver
