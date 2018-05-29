@@ -15,7 +15,7 @@
 
 #### Execute It:
 ```bash
-1. python main.py
+1. python main_rpi.py
 ```
 #### Adding Cron Job To Execute It Every  Reboot:
 ```bash
