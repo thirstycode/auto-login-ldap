@@ -18,12 +18,14 @@ options.set_headless(headless=True)
 
 browser = webdriver.Firefox(firefox_options=options,executable_path="drivers/rpi/geckodriver")
 
+# checking ethernet connection is available
 try:
 	browser.get("http://internet.iitb.ac.in")
 except WebDriverException:
 	print("Check Ethernet Connection Properly, DNS not found.")
 	quit()
 
+# 	finding username box
 input_username = browser.find_elements_by_xpath("//input[@name='uname']")
 if len(input_username) > 0:
 	ActionChains(browser).move_to_element(input_username[0]).click().send_keys(username).perform()
@@ -31,6 +33,7 @@ if len(input_username) > 0:
 else:
 	print("Already Logged In")
 
+# 	finding password box
 try : 	
 	input_password = browser.find_elements_by_xpath("//input[@name='passwd']")
 	ActionChains(browser).move_to_element(input_password[0]).click().send_keys(password).perform()
@@ -38,6 +41,7 @@ try :
 except:
 	pass
 
+# finding login button
 try:
 	login_button = browser.find_element_by_xpath("//input[@value='Login']")
 	ActionChains(browser).move_to_element(login_button).click().perform()
@@ -46,6 +50,7 @@ except:
 
 time.sleep(3)
 
+# checking already logged in
 browser.get("http://internet.iitb.ac.in")
 login_status = browser.find_elements_by_xpath("//input[@value='Logout']")
 
