@@ -9,16 +9,16 @@
 ```bash
 1. git clone https://github.com/thirstycode/auto-login-ldap-internet
 2. cd auto-login-ldap-internet
-3. pip3 install selenium
+3. pip3 install robobrowser
 ```
-4. Add username and password to main.py
+4. Add username and password to main_all.py
 
 #### Execute It:
 ```bash
-1. python main_rpi.py
+1. python main_all.py
 ```
 #### Adding Cron Job To Execute It Every  Reboot:
 ```bash
-1. @reboot python /home/pi/auto-login-ldap-internet/main.py
+1. @reboot python /home/pi/auto-login-ldap-internet/main_all.py
 (This path can be different for everyone)
 ```
